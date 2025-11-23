@@ -1,0 +1,67 @@
+from colorama import Fore, Style, init
+
+init(autoreset=True)
+
+
+def validar_nombre(producto):
+    while True:
+
+        if producto.strip():  # evita vacío en producto ingresado
+            return producto.title()
+        else:
+            print(
+                Fore.RED
+                + "\nEl nombre del producto no puede estar vacío. Pruebe reingresar"
+            )
+            producto = input("\nIngrese nuevamente el nombre del producto: ")
+
+
+def validar_categoria(categoria):
+    while True:
+
+        if categoria.strip():  # evita vacío en categoría
+            return categoria.title()
+        else:
+            print(
+                Fore.RED
+                + "\nLa categoría del producto no puede estar vacía. Pruebe reingresar"
+            )
+            categoria = input("\nIngrese nuevamente la categoría: ")
+
+
+def validar_valor(precio):
+    while True:
+
+        if str(precio).isdigit() and int(precio) > 0:
+            return int(precio)
+        else:
+            print(
+                Fore.RED
+                + "\nEl valor precio debe ser un número entero positivo y no puede estar vacío. Intente nuevamente"
+            )
+            precio = int(input("\nIngrese el precio del producto nuevamente: "))
+
+
+def validar_cantidad(unidades):
+    while True:
+
+        if (unidades).isdigit() and int(
+            unidades
+        ) > 0:  # se va a asegurar que sea numérico y que sea mayor a cero.
+            return int(unidades)
+        else:
+            print(
+                Fore.RED
+                + "\nLa cantidad de unidades debe ser un número entero positivo y no puede quedar vacía. Intente nuevamente"
+            )
+            unidades = input("\nIngrese la cantidad de unidades nuevamente: ")
+
+
+def validar_informacion(descripcion):
+    while True:
+
+        if descripcion.strip():
+            return descripcion.title()
+        else:
+            print(Fore.RED + "\nLa descripción no puede estar vacía.Pruebe reingresar.")
+            descripcion = input("\nIngrese la descripción del producto nuevamente.")
