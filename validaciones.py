@@ -1,6 +1,4 @@
-from colorama import Fore, Style, init
-
-init(autoreset=True)
+from estilos_programa import ERROR, OK, AVISO, INFO, NEGRITA
 
 
 def validar_nombre(producto):
@@ -10,7 +8,7 @@ def validar_nombre(producto):
             return producto.title()
         else:
             print(
-                Fore.RED
+                ERROR
                 + "\nEl nombre del producto no puede estar vacío. Pruebe reingresar"
             )
             producto = input("\nIngrese nuevamente el nombre del producto: ")
@@ -23,7 +21,7 @@ def validar_categoria(categoria):
             return categoria.title()
         else:
             print(
-                Fore.RED
+                ERROR
                 + "\nLa categoría del producto no puede estar vacía. Pruebe reingresar"
             )
             categoria = input("\nIngrese nuevamente la categoría: ")
@@ -36,7 +34,7 @@ def validar_valor(precio):
             return int(precio)
         else:
             print(
-                Fore.RED
+                ERROR
                 + "\nEl valor precio debe ser un número entero positivo y no puede estar vacío. Intente nuevamente"
             )
             precio = int(input("\nIngrese el precio del producto nuevamente: "))
@@ -51,7 +49,7 @@ def validar_cantidad(unidades):
             return int(unidades)
         else:
             print(
-                Fore.RED
+                ERROR
                 + "\nLa cantidad de unidades debe ser un número entero positivo y no puede quedar vacía. Intente nuevamente"
             )
             unidades = input("\nIngrese la cantidad de unidades nuevamente: ")
@@ -63,5 +61,5 @@ def validar_informacion(descripcion):
         if descripcion.strip():
             return descripcion.title()
         else:
-            print(Fore.RED + "\nLa descripción no puede estar vacía.Pruebe reingresar.")
+            print(ERROR + "\nLa descripción no puede estar vacía.Pruebe reingresar.")
             descripcion = input("\nIngrese la descripción del producto nuevamente.")
