@@ -3,10 +3,10 @@ from estilos_programa import ERROR, OK, AVISO, INFO, NEGRITA
 
 def validar_nombre(producto):
     while True:
-
-        if producto.strip():  # evita vacío en producto ingresado
+        if producto.strip():
             return producto.title()
         else:
+            # evita vacío en producto ingresado
             print(
                 ERROR
                 + "\nEl nombre del producto no puede estar vacío. Pruebe reingresar"
@@ -29,23 +29,23 @@ def validar_categoria(categoria):
 
 def validar_valor(precio):
     while True:
-
-        if str(precio).isdigit() and int(precio) > 0:
+        precio = precio.strip()
+        if precio.isdigit() and int(precio) > 0:
             return int(precio)
         else:
             print(
                 ERROR
                 + "\nEl valor precio debe ser un número entero positivo y no puede estar vacío. Intente nuevamente"
             )
-            precio = int(input("\nIngrese el precio del producto nuevamente: "))
+            precio = input("\nIngrese el precio del producto nuevamente: ")
 
 
 def validar_cantidad(unidades):
     while True:
-
-        if (unidades).isdigit() and int(
-            unidades
-        ) > 0:  # se va a asegurar que sea numérico y que sea mayor a cero.
+        unidades = unidades.strip()
+        if (
+            unidades.isdigit() and int(unidades) > 0
+        ):  # se va a asegurar que sea numérico y que sea mayor a cero.
             return int(unidades)
         else:
             print(

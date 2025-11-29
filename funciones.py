@@ -320,24 +320,17 @@ def modificar_producto():
     if nueva_categoria.strip() == "":
         nueva_categoria = producto[2]
 
-    try:
-        nuevo_precio = input("\nNuevo precio (enter para mantener): ")
-        if nuevo_precio.strip() == "":
-            nuevo_precio = producto[3]
-        else:
-            nuevo_precio = validar_valor(nuevo_precio)
-    except ValueError:
-        print(ERROR + "Precio inválido.")
-        return
-    try:
-        nuevas_unidades = input("\nCantidad de unidades (enter para mantener): ")
-        if nuevas_unidades.strip() == "":
-            nuevas_unidades = producto[4]
-        else:
-            nuevas_unidades = validar_cantidad(nuevas_unidades)
-    except ValueError:
-        print(ERROR + "Unidades inválidas.")
-        return
+    nuevo_precio = input("\nNuevo precio (enter para mantener): ")
+    if nuevo_precio.strip() == "":
+        nuevo_precio = producto[3]
+    else:
+        nuevo_precio = validar_valor(nuevo_precio)
+
+    nuevas_unidades = input("\nCantidad de unidades (enter para mantener): ")
+    if nuevas_unidades.strip() == "":
+        nuevas_unidades = producto[4]
+    else:
+        nuevas_unidades = validar_cantidad(nuevas_unidades)
 
     nueva_descripcion = input("\nNueva descripción (enter para mantener): ")
     if nueva_descripcion.strip() == "":
